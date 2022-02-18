@@ -71,3 +71,12 @@ const users = {
   create: user => ApiService.post('/users', user),
 }
 
+export const ItemService = {
+  fetch(params) {
+    return ApiService.query("items", params)
+  },
+  get:(slug) => ApiService.get("items", slug),
+  create:(params) =>  ApiService.post("items", params),
+  update:(slug, params)=> ApiService.update("items", slug, params),
+  delete:(slug) => ApiService.delete(`items/${slug}`),
+};
